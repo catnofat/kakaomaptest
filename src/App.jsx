@@ -1,10 +1,10 @@
-import Map from "./Map";
+import ReservationPage from "./testfolder/ReservationPage";
 
 const App = () => {
   return (
     <div className="App">
       <div>hello</div>
-      <Map />
+      <ReservationPage />
     </div>
   );
 };

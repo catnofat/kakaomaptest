@@ -1,4 +1,4 @@
-import KakaoMap from "../atoms/KakaoMap";
+import KakaoMap from "./KakaoMap";
 
 import { useEffect, useState } from "react";
 

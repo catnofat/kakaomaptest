@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 
-const KakaoMap = ({
-  currentloc = { latitude: 35.14, longitude: 126.9 },
-  className,
-}) => {
+const KakaoMap = ({ currentloc, className }) => {
   useEffect(() => {
     const script = document.createElement("script");
     script.async = true;
@@ -38,37 +35,19 @@ const KakaoMap = ({
         });
 
         marker.setMap(map);
-
-        mapdata.forEach((el) => {
-          const position = new kakao.maps.LatLng(
-            el.location.latitude,
-            el.location.longitude
-          );
-          const iwContent = `<div style="...">
-            ${el.name}
-            <div style="..."></div>
-          </div>`; // Use the actual styles here
-
-          new kakao.maps.CustomOverlay({
-            map: map,
-            position: position,
-            content: iwContent,
-            yAnchor: 1,
-          });
-        });
       });
     };
 
     return () => {
       document.head.removeChild(script);
     };
-  }, [currentloc, mapdata]);
+  }, [currentloc]);
 
   return (
     <div
       id="map"
       className={className}
-      style={{ width: "100%", height: "350px" }}
+      style={{ width: "1000px", height: "1400px" }}
     ></div>
   );
 };
